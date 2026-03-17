@@ -117,7 +117,7 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
         self._FPS = fps  # Keep this as standard
         self.custom_classes = custom_classes
         if custom_classes is not None:
-            assert  == len(custom_classes) + 1
+            assert num_classes == len(custom_classes) + 1
             assert 0 not in custom_classes
             _, class_whitelist = read_labelmap(open(label_file))
             assert set(custom_classes).issubset(class_whitelist)
