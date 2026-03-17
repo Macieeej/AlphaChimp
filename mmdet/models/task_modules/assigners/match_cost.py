@@ -407,7 +407,7 @@ class FocalLossCostHierarchy(BaseMatchCost):
                  weight: Union[float, int] = 1.,
                  cls_weight: float = 0.1,
                  obj_weight: float = 2.0,
-                 num_classes: int = 24) -> None:
+                 num_classes: int = 9) -> None:
         super().__init__(weight=weight)
         self.alpha = alpha
         self.gamma = gamma
