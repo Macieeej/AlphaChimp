@@ -74,7 +74,7 @@ model = dict(
             label_noise_scale=0.00001,
             box_noise_scale=0.2,  # 0.4 for DN-DETR
             group_cfg=dict(dynamic=True, num_groups=None,
-                           num_dn_queries=4)),  # TODO: half num_dn_queries
+                           num_dn_queries=2)),  # TODO: half num_dn_queries
         # training and testing settings
         train_cfg=dict(
             assigner=dict(
