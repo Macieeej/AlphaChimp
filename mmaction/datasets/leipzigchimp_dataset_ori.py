@@ -103,7 +103,7 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
                  start_index: int = 0,
                  proposal_file: str = None,
                  person_det_score_thr: float = 0.9,
-                 num_classes: int = 24,
+                 num_classes: int = 9,
                  custom_classes: Optional[List[int]] = None,
                  data_prefix: ConfigType = dict(img=''),
                  modality: str = 'RGB',
@@ -117,7 +117,7 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
         self._FPS = fps  # Keep this as standard
         self.custom_classes = custom_classes
         if custom_classes is not None:
-            assert num_classes == len(custom_classes) + 1
+            assert  == len(custom_classes) + 1
             assert 0 not in custom_classes
             _, class_whitelist = read_labelmap(open(label_file))
             assert set(custom_classes).issubset(class_whitelist)
@@ -142,7 +142,7 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
             pipeline=pipeline,
             data_prefix=data_prefix,
             test_mode=test_mode,
-            num_classes=num_classes,
+            =,
             start_index=start_index,
             modality=modality,
             **kwargs)
