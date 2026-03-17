@@ -7,7 +7,7 @@ model = dict(
     model_cfg=dict(
         type='mmdet.DINO',
         num_feature_levels=num_levels,
-        num_queries=50,  # num_matching_queries
+        num_queries=10,  # num_matching_queries
         with_box_refine=True,
         as_two_stage=True,
         data_preprocessor=None,
@@ -64,7 +64,7 @@ model = dict(
         bbox_head=dict(
             type='mmdet.DINOHead',
             embed_dims=512,
-            num_classes=10,
+            num_classes=9,
             mlp_cls=True,
             sync_cls_avg_factor=True,
             loss_cls=dict(type='MultilableCrossEntropy', mask_cls=False, no_obj_mode=True, loss_weight=2.0),
@@ -74,7 +74,7 @@ model = dict(
             label_noise_scale=0.00001,
             box_noise_scale=0.2,  # 0.4 for DN-DETR
             group_cfg=dict(dynamic=True, num_groups=None,
-                           num_dn_queries=10)),  # TODO: half num_dn_queries
+                           num_dn_queries=2)),  # TODO: half num_dn_queries
         # training and testing settings
         train_cfg=dict(
             assigner=dict(
@@ -84,8 +84,8 @@ model = dict(
                     dict(type='mmdet.BBoxL1Cost', weight=5.0, box_format='xywh'),
                     dict(type='mmdet.IoUCost', iou_mode='giou', weight=2.0)
                 ],
-                num_classes=10)),
-        test_cfg=dict(max_per_img=50)),  # 100 for DeformDETR
+                num_classes=9)),
+        test_cfg=dict(max_per_img=10)),  # 100 for DeformDETR
     data_preprocessor=dict(
         type='mmaction.MultiModalDataPreprocessor',
         preprocessors=dict(
@@ -170,7 +170,7 @@ test_dataloader = val_dataloader
 
 val_evaluator = dict(
     type='AVAMetric',
-    num_classes=10,
+    num_classes=9,
     ann_file=ann_file_val,
     label_file=label_file,
     exclude_file=exclude_file_val,
