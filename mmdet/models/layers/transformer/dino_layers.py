@@ -243,6 +243,9 @@ class CdnQueryGenerator(BaseModule):
             bboxes_normalized = bboxes / factor
             gt_bboxes_list.append(bboxes_normalized)
             gt_labels_list.append(sample.gt_instances.labels)
+        print(f"DEBUG gt_labels.shape={gt_labels.shape}")
+        print(f"DEBUG gt_bboxes.shape={gt_bboxes.shape}")
+        print(f"DEBUG gt_labels_list[0].shape={gt_labels_list[0].shape}")
         gt_labels = torch.cat(gt_labels_list)  # (num_target_total, 4)
         gt_bboxes = torch.cat(gt_bboxes_list)
 
