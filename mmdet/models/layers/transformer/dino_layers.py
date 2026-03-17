@@ -515,6 +515,17 @@ class CdnQueryGenerator(BaseModule):
         batched_bbox_query = torch.zeros(
             batch_size, num_denoising_queries, 4, device=device)
 
+                # DEBUG - add these lines:
+        print(f"DEBUG batch_size={batch_size}")
+        print(f"DEBUG num_target_list={num_target_list}")
+        print(f"DEBUG max_num_target={max_num_target}, num_groups={num_groups}")
+        print(f"DEBUG input_label_query.shape={input_label_query.shape}")
+        print(f"DEBUG batch_idx={batch_idx}")
+        print(f"DEBUG batch_idx_expand.shape={batch_idx_expand.shape}")
+        print(f"DEBUG map_query_index.shape={map_query_index.shape}")
+        print(f"DEBUG batched_label_query.shape={batched_label_query.shape}")
+        import sys; sys.stdout.flush()
+
         batched_label_query[mapper] = input_label_query
         batched_bbox_query[mapper] = input_bbox_query
         return batched_label_query, batched_bbox_query
