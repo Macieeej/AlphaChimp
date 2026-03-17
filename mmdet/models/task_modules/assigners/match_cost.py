@@ -263,7 +263,7 @@ class FocalLossCost(BaseMatchCost):
         self.gamma = gamma
         self.eps = eps
         self.binary_input = binary_input
-        self.num_classes = 24
+        self.num_classes = 9
         self.bce_loss = nn.BCEWithLogitsLoss(reduction='none')
         self.weight = weight
         self.cls_weight = cls_weight
