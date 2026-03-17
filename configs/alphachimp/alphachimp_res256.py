@@ -140,7 +140,8 @@ val_pipeline = [
 
 
 train_dataloader = dict(
-    batch_size=2,
+    #batch_size=2,
+    batch_size=1,
     num_workers=32,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=True),
@@ -204,7 +205,7 @@ optim_wrapper = dict(
         type='AdamW',
         lr=0.0001,  # 0.0002 for DeformDETR
         weight_decay=0.0005),
-    accumulative_counts=4,
+    accumulative_counts=8,
     clip_grad=dict(max_norm=0.1, norm_type=2),
     paramwise_cfg=dict(custom_keys={'backbone': dict(lr_mult=0.5)})
 )  # custom_keys contains sampling_offsets and reference_points in DeformDETR  # noqa
