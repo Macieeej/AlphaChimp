@@ -7,7 +7,7 @@ model = dict(
     model_cfg=dict(
         type='mmdet.DINO',
         num_feature_levels=num_levels,
-        num_queries=50,  # num_matching_queries
+        num_queries=10,  # num_matching_queries
         with_box_refine=True,
         as_two_stage=True,
         data_preprocessor=None,
@@ -85,7 +85,7 @@ model = dict(
                     dict(type='mmdet.IoUCost', iou_mode='giou', weight=2.0)
                 ],
                 num_classes=9)),
-        test_cfg=dict(max_per_img=50)),  # 100 for DeformDETR
+        test_cfg=dict(max_per_img=10)),  # 100 for DeformDETR
     data_preprocessor=dict(
         type='mmaction.MultiModalDataPreprocessor',
         preprocessors=dict(

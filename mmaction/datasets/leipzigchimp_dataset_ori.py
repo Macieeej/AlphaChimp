@@ -142,7 +142,7 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
             pipeline=pipeline,
             data_prefix=data_prefix,
             test_mode=test_mode,
-            =,
+            num_classes=num_classes,
             start_index=start_index,
             modality=modality,
             **kwargs)
@@ -321,4 +321,3 @@ class LeipzigChimpActionDatasetOri(BaseActionDataset):
         data_info['label_mask'] = ann['label_mask']
 
         return data_info
-
