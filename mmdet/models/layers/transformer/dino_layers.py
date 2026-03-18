@@ -243,9 +243,9 @@ class CdnQueryGenerator(BaseModule):
             bboxes_normalized = bboxes / factor
             gt_bboxes_list.append(bboxes_normalized)
             gt_labels_list.append(sample.gt_instances.labels)
-        print(f"DEBUG gt_labels.shape={gt_labels.shape}")
-        print(f"DEBUG gt_bboxes.shape={gt_bboxes.shape}")
-        print(f"DEBUG gt_labels_list[0].shape={gt_labels_list[0].shape}")
+        #print(f"DEBUG gt_labels.shape={gt_labels.shape}")
+        #print(f"DEBUG gt_bboxes.shape={gt_bboxes.shape}")
+        #print(f"DEBUG gt_labels_list[0].shape={gt_labels_list[0].shape}")
         gt_labels = torch.cat(gt_labels_list)  # (num_target_total, 4)
         gt_bboxes = torch.cat(gt_bboxes_list)
 
@@ -518,16 +518,16 @@ class CdnQueryGenerator(BaseModule):
         batched_bbox_query = torch.zeros(
             batch_size, num_denoising_queries, 4, device=device)
 
-                # DEBUG - add these lines:
-        print(f"DEBUG batch_size={batch_size}")
-        print(f"DEBUG num_target_list={num_target_list}")
-        print(f"DEBUG max_num_target={max_num_target}, num_groups={num_groups}")
-        print(f"DEBUG input_label_query.shape={input_label_query.shape}")
-        print(f"DEBUG batch_idx={batch_idx}")
-        print(f"DEBUG batch_idx_expand.shape={batch_idx_expand.shape}")
-        print(f"DEBUG map_query_index.shape={map_query_index.shape}")
-        print(f"DEBUG batched_label_query.shape={batched_label_query.shape}")
-        import sys; sys.stdout.flush()
+        # DEBUG 
+        #print(f"DEBUG batch_size={batch_size}")
+        #print(f"DEBUG num_target_list={num_target_list}")
+        #print(f"DEBUG max_num_target={max_num_target}, num_groups={num_groups}")
+        #print(f"DEBUG input_label_query.shape={input_label_query.shape}")
+        #print(f"DEBUG batch_idx={batch_idx}")
+        #print(f"DEBUG batch_idx_expand.shape={batch_idx_expand.shape}")
+        #print(f"DEBUG map_query_index.shape={map_query_index.shape}")
+        #print(f"DEBUG batched_label_query.shape={batched_label_query.shape}")
+        #import sys; sys.stdout.flush()
 
         batched_label_query[mapper] = input_label_query
         batched_bbox_query[mapper] = input_bbox_query
