@@ -278,6 +278,7 @@ def ava_eval(result_file,
         print(f'Index: {k}, Action: {class_name}: AP: {ap:.4f};', flush=True)
 
     #print('CLSSSSSSSSS', cls_AP)
+    '''
     slowfast_base = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 17, 18, 19, 20, 21, 23]]) / 18
     slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [8, 9, 10, 11, 16, 17, 18, 19, 20, 21, 23]]) / 11
 
@@ -286,22 +287,32 @@ def ava_eval(result_file,
     object_interaction = np.nanmean([x[2] for x in cls_AP if 5 <= x[0] < 8])
     social_interaction = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 22])
     others = np.nanmean([x[2] for x in cls_AP if 22 <= x[0] < 24])
+    '''
+
+    slowfast_base = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9]]) / 9
+    slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9]]) / 9
+
+    overall = np.nanmean([x[2] for x in cls_AP])
+    object_interaction = np.nanmean([x[2] for x in cls_AP if 1 <= x[0] < 2])
+    locomotion = np.nanmean([x[2] for x in cls_AP if 2 <= x[0] < 10])
+    #social_interaction = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 22])
+    #others = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 10])
 
     print('Overall Results: ', flush=True)
     print(f'Overall mAP: {overall:.4f}', flush=True)
     print(f'Locomotion mAP: {locomotion:.4f}', flush=True)
     print(f'Object Interaction mAP: {object_interaction:.4f}', flush=True)
-    print(f'Social Interaction mAP: {social_interaction:.4f}', flush=True)
-    print(f'Others mAP: {others:.4f}', flush=True)
+    #print(f'Social Interaction mAP: {social_interaction:.4f}', flush=True)
+    #print(f'Others mAP: {others:.4f}', flush=True)
     print(f'Slowfast Based mAP: {slowfast_base:.4f}', flush=True)
-    print(f'Slowfast Based Social mAP: {slowfast_base_social:.4f}', flush=True)
+    #print(f'Slowfast Based Social mAP: {slowfast_base_social:.4f}', flush=True)
 
     results = {}
     results['overall'] = slowfast_base
     results['locomotion'] = locomotion
     results['object_interaction'] = object_interaction
-    results['social_interaction'] = slowfast_base_social
-    results['others'] = others
+    #results['social_interaction'] = slowfast_base_social
+    #results['others'] = others
 
     if verbose:
         for k, class_name, ap in cls_AP:
