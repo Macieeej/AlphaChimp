@@ -17,7 +17,7 @@ conda activate alphachimp
 export PYTHONPATH="$HOME/AlphaChimp:${PYTHONPATH:-}"
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
 
-RES="${RES:-256}"
+RES="${RES:-576}"
 NGPU="${NGPU:-1}"
 CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_res${RES}.py"
 
