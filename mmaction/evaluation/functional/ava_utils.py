@@ -290,28 +290,28 @@ def ava_eval(result_file,
     '''
 
     slowfast_base = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9]]) / 9
-    slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9]]) / 9
+    slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [10, 11, 12, 13, 14, 15, 16]]) / 7
 
     overall = np.nanmean([x[2] for x in cls_AP])
     object_interaction = np.nanmean([x[2] for x in cls_AP if 1 <= x[0] < 2])
     locomotion = np.nanmean([x[2] for x in cls_AP if 2 <= x[0] < 10])
-    #social_interaction = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 22])
+    social_interaction = np.nanmean([x[2] for x in cls_AP if 10 <= x[0] < 17])
     #others = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 10])
 
     print('Overall Results: ', flush=True)
     print(f'Overall mAP: {overall:.4f}', flush=True)
     print(f'Locomotion mAP: {locomotion:.4f}', flush=True)
     print(f'Object Interaction mAP: {object_interaction:.4f}', flush=True)
-    #print(f'Social Interaction mAP: {social_interaction:.4f}', flush=True)
+    print(f'Social Interaction mAP: {social_interaction:.4f}', flush=True)
     #print(f'Others mAP: {others:.4f}', flush=True)
     print(f'Slowfast Based mAP: {slowfast_base:.4f}', flush=True)
-    #print(f'Slowfast Based Social mAP: {slowfast_base_social:.4f}', flush=True)
+    print(f'Slowfast Based Social mAP: {slowfast_base_social:.4f}', flush=True)
 
     results = {}
     results['overall'] = slowfast_base
     results['locomotion'] = locomotion
     results['object_interaction'] = object_interaction
-    #results['social_interaction'] = slowfast_base_social
+    results['social_interaction'] = slowfast_base_social
     #results['others'] = others
 
     if verbose:

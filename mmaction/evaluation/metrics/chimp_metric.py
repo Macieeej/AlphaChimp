@@ -366,7 +366,7 @@ class ChimpMetric(BaseMetric):
             _summarize(coco_eval, 1, cls_name, i+1, 0.50)
         _summarize(coco_eval, 1, 'locomotion', [2, 3, 4, 5, 6, 7, 8, 9], 0.50)
         _summarize(coco_eval, 1, 'object interaction', [1], 0.50)
-        #_summarize(coco_eval, 1, 'other', [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22], 0.50)
+        _summarize(coco_eval, 1, 'social interaction', [10, 11, 12, 13, 14, 15, 16], 0.50)
         action_map = _summarize(coco_eval, 1, 'action mean', None, 0.50)
         final_res = {'mAP': action_map}
 
