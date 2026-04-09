@@ -90,7 +90,7 @@ def _rand_masks(rng, num_boxes, bboxes, img_w, img_h):
 def demo_mm_inputs(batch_size=2,
                    image_shapes=(3, 128, 128),
                    num_items=None,
-                   num_classes=10,
+                   num_classes=24,
                    sem_seg_output_strides=1,
                    with_mask=False,
                    with_semantic=False,
