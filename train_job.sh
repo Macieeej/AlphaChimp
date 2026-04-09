@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=alphachimp
 #SBATCH --nodes=1
-#SBATCH --gpus=1
+#SBATCH --gpus=4
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
@@ -18,7 +18,7 @@ export PYTHONPATH="$HOME/AlphaChimp:${PYTHONPATH:-}"
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
 
 RES="${RES:-576}"
-NGPU="${NGPU:-1}"
+NGPU="${NGPU:-4}"
 CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_res${RES}.py"
 
 echo "Host: $(hostname)"
