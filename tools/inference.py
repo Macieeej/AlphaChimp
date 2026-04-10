@@ -108,7 +108,7 @@ def parse_args():
         default='infer_input',
         type=str,
         help='path of video.')
-    parser.add_argument('--local_rank', type=int, default=0)
+    parser.add_argument('--local-rank', type=int, default=0)
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--vis_mode', type=str, default='mix', help="choose between 'det', 'act' and 'mix', which means to visualize detection bbox / action / both")
     parser.add_argument('--test_mode', type=bool, default=False, help="debug")
