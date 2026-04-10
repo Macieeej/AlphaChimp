@@ -36,7 +36,7 @@ class HungarianAssigner(BaseAssigner):
     def __init__(
         self, match_costs: Union[List[Union[dict, ConfigDict]], dict,
                                  ConfigDict],
-            num_classes=24
+            num_classes=17
     ) -> None:
 
         if isinstance(match_costs, dict):
