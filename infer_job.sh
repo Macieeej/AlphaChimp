@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=alphachimp-test
+#SBATCH --job-name=alphachimp-infer
 #SBATCH --nodes=1
 #SBATCH --gpus=4
 #SBATCH --ntasks-per-node=4
@@ -18,20 +18,17 @@ conda activate alphachimp
 export PYTHONPATH="$HOME/AlphaChimp:${PYTHONPATH:-}"
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
 
-CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_res576.py"
-CHECKPOINT="$HOME/AlphaChimp/work_dirs/alphachimp/alphachimp_res576.pth"
+CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_infer576.py"
 NGPU=4
-PORT=25525
+PORT=25526
 
 echo "Host: $(hostname)"
 echo "Job ID: ${SLURM_JOB_ID:-none}"
 echo "PWD: $(pwd)"
 echo "CONFIG=$CONFIG"
-echo "CHECKPOINT=$CHECKPOINT"
 echo "NGPU=$NGPU"
 
 test -f "$CONFIG"
-test -f "$CHECKPOINT"
 
 CMD=(
   python -m torch.distributed.launch
@@ -40,10 +37,10 @@ CMD=(
   --master_addr=127.0.0.1
   --nproc_per_node="$NGPU"
   --master_port="$PORT"
-  tools/test.py
+  tools/inference.py
   "$CONFIG"
-  --checkpoint "$CHECKPOINT"
-  --launcher pytorch
+  --vis_mode 'mix'
+  --gpus "$NGPU"
 )
 
 printf 'Running command:\n%s\n' "${CMD[*]}"
