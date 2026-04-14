@@ -82,7 +82,8 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description='MMAction2 test (and eval) a model')
     parser.add_argument('config', help='test config file path')
-    parser.add_argument('--checkpoint', type=str, default='work_dirs/alphachimp/alphachimp_res576.pth', help='checkpoint file path')
+    #parser.add_argument('--checkpoint', type=str, default='work_dirs/alphachimp/alphachimp_res576.pth', help='checkpoint file path')
+    parser.add_argument('--checkpoint', type=str, default='work_dirs/alphachimp_res576/best_mAP_overall_iter_4000.pth', help='checkpoint file path')
     parser.add_argument(
         '--gpus',
         type=int,
