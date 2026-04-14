@@ -125,7 +125,7 @@ def merge_args(cfg, args):
 
     # -------------------- Dump predictions --------------------
     if args.dump is not None:
-        assert argcs.dump.endswith(('.pkl', '.pickle')), \
+        assert args.dump.endswith(('.pkl', '.pickle')), \
             'The dump file must be a pkl file.'
         dump_metric = dict(type='DumpResults', out_file_path=args.dump)
         if isinstance(cfg.test_evaluator, (list, tuple)):
@@ -226,13 +226,10 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'hanging',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -351,13 +348,10 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'hanging',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -486,13 +480,10 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'hanging',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
