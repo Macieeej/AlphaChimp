@@ -2,4 +2,5 @@ infer_input/
 data/
 work_dirs/
 logs/
-.claude/
+infer_output/
+infer_temps/

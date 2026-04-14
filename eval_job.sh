@@ -19,7 +19,7 @@ export PYTHONPATH="$HOME/AlphaChimp:${PYTHONPATH:-}"
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
 
 CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_res576.py"
-CHECKPOINT="$HOME/AlphaChimp/work_dirs/alphachimp/alphachimp_res576.pth"
+CHECKPOINT="$HOME/AlphaChimp/work_dirs/alphachimp_res576/best_mAP_overall_iter_4000.pth"
 NGPU=4
 PORT=25525
 
