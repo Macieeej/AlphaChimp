@@ -226,7 +226,7 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+    action_class_names = [ 'other', 'camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
                           'sitting', 'sitting_on_back', 'standing', 'hanging',
                           'grooming', 'being_groomed', 'touch', 'leading', 'following',
                           'chimp_carrying', 'being_carried']
@@ -348,7 +348,7 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
                           'sitting', 'sitting_on_back', 'standing', 'hanging',
                           'grooming', 'being_groomed', 'touch', 'leading', 'following',
                           'chimp_carrying', 'being_carried']
@@ -480,7 +480,7 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
                           'sitting', 'sitting_on_back', 'standing', 'hanging',
                           'grooming', 'being_groomed', 'touch', 'leading', 'following',
                           'chimp_carrying', 'being_carried']
