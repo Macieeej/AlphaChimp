@@ -2,7 +2,7 @@
 #SBATCH --job-name=alphachimp-infer
 #SBATCH --nodes=1
 #SBATCH --gpus=4
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=1
 #SBATCH --time=4:00:00
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
@@ -19,7 +19,7 @@ export PYTHONPATH="$HOME/AlphaChimp:${PYTHONPATH:-}"
 export TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=1
 
 CONFIG="$HOME/AlphaChimp/configs/alphachimp/alphachimp_infer576.py"
-CHECKPOINT="$HOME/AlphaChimp/work_dirs/alphachimp_res576/best_mAP_overall_iter_4000.pth"
+CHECKPOINT="$HOME/AlphaChimp/work_dirs/alphachimp_res576/best_mAP_overall_iter_7000.pth"
 NGPU=4
 PORT=25526
 
