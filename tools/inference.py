@@ -226,10 +226,10 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = [ 'other', 'camera_interaction', 'climbing_down', 'climbing_up', 'walking', 'running',
-                          'sitting', 'sitting_on_back', 'standing', 'hanging',
-                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
-                          'chimp_carrying', 'being_carried']
+    action_class_names = [ 'other', 'camera_interaction', 'climbing', 'moving',
+                          'resting', 'sitting_on_back',
+                          'grooming', 'being_groomed', 'touching', 'leading', 'following',
+                          'carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
