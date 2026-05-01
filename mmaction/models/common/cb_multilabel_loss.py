@@ -89,7 +89,7 @@ class CBMultilabelCrossEntropy(BaseModule):
         self,
         use_sigmoid: bool = True,
         loss_weight: float = 1.0,
-        num_classes: int = 17,
+        num_classes: int = 13,
         mask_cls: bool = False,
         no_obj_mode: bool = False,
         extra_obj_mode: bool = False,

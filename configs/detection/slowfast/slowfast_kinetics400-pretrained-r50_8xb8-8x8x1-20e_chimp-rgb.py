@@ -47,7 +47,7 @@ model = dict(
             type='BBoxHeadAVA',
             background_class=False,
             in_channels=2304,
-            num_classes=17,
+            num_classes=13,
             multilabel=True,
             dropout_ratio=0.5)),
     data_preprocessor=dict(
@@ -141,7 +141,7 @@ val_evaluator = dict(
     type='AVAMetric',
     ann_file=ann_file_val,
     label_file=label_file,
-    num_classes=17,
+    num_classes=13,
     exclude_file=exclude_file_val)
 test_evaluator = val_evaluator
 

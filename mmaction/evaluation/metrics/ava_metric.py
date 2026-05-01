@@ -23,7 +23,7 @@ class AVAMetric(BaseMetric):
                  label_file: str,
                  options: Tuple[str] = ('mAP', ),
                  action_thr: float = 0.1,
-                 num_classes: int = 17,
+                 num_classes: int = 13,
                  is_dino: bool = False,
                  dino_thr: float = 0.01,
                  dino_act_thr: float = 0.01,

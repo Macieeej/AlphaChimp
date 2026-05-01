@@ -63,7 +63,7 @@ detector=dict(
         bbox_head=dict(
             type='mmdet.DINOHead',
             embed_dims=512,
-            num_classes=17,
+            num_classes=13,
             mlp_cls=True,
             sync_cls_avg_factor=True,
             loss_cls=dict(type='mmaction.MultilableCrossEntropy', mask_cls=False, no_obj_mode=True, loss_weight=2.0),
@@ -83,7 +83,7 @@ detector=dict(
                     dict(type='mmdet.BBoxL1Cost', weight=5.0, box_format='xywh'),
                     dict(type='mmdet.IoUCost', iou_mode='giou', weight=2.0)
                 ],
-                num_classes=17)),
+                num_classes=13)),
         test_cfg=dict(max_per_img=10)),  # 100 for DeformDETR
     data_preprocessor=dict(
         type='mmaction.MultiModalDataPreprocessor',

@@ -11,7 +11,7 @@ from mmengine.model import BaseModule
 class MultilableCrossEntropyHierarchy(BaseModule):
     """ Criss-Cross Attention Module"""
 
-    def __init__(self, use_sigmoid=True, loss_weight=1.0, num_classes=17, mask_cls=False, init_cfg=None, **kwargs):
+    def __init__(self, use_sigmoid=True, loss_weight=1.0, num_classes=13, mask_cls=False, init_cfg=None, **kwargs):
         super().__init__(init_cfg=init_cfg)
         self.use_sigmoid = use_sigmoid
         self.loss_weight = loss_weight

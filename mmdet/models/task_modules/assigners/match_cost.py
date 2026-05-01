@@ -263,7 +263,7 @@ class FocalLossCost(BaseMatchCost):
         self.gamma = gamma
         self.eps = eps
         self.binary_input = binary_input
-        self.num_classes = 17
+        self.num_classes = 13
         self.bce_loss = nn.BCEWithLogitsLoss(reduction='none')
         self.weight = weight
         self.cls_weight = cls_weight
@@ -407,7 +407,7 @@ class FocalLossCostHierarchy(BaseMatchCost):
                  weight: Union[float, int] = 1.,
                  cls_weight: float = 0.1,
                  obj_weight: float = 2.0,
-                 num_classes: int = 17) -> None:
+                 num_classes: int = 13) -> None:
         super().__init__(weight=weight)
         self.alpha = alpha
         self.gamma = gamma
