@@ -3,7 +3,8 @@ _base_ = '../_base_/default_runtime.py'
 num_levels = 5
 model = dict(
     type='mmaction.AlphaChimp',
-    init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/pretrain_res576.pth'),
+    #init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/pretrain_res576.pth'),
+    init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/best_mAP_overall_iter_8000.pth'),
     model_cfg=dict(
         type='mmdet.DINO',
         num_feature_levels=num_levels,
