@@ -104,7 +104,7 @@ class ChimpDataset_Infer(BaseActionDataset):
                  start_index: int = 0,
                  proposal_file: str = None,
                  person_det_score_thr: float = 0.9,
-                 num_classes: int = 24,
+                 num_classes: int = 17,
                  custom_classes: Optional[List[int]] = None,
                  data_prefix: ConfigType = dict(img=''),
                  modality: str = 'RGB',

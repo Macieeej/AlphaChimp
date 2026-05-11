@@ -32,7 +32,7 @@ model = dict(
             type='mmdet.ChannelMapper',
             in_channels=[192, 384, 768, 1536],
             kernel_size=1,
-            tmp_stride=4,
+            tmp_stride=8,
             out_channels=512,
             norm_cfg=dict(type='GroupNorm', num_groups=32),
             num_outs=num_levels),
@@ -225,6 +225,9 @@ param_scheduler = [
 # NOTE: `auto_scale_lr` is for automatically scaling LR,
 # USER SHOULD NOT CHANGE ITS VALUES.
 # base_batch_size = (8 GPUs) x (2 samples per GPU)
-auto_scale_lr = dict(base_batch_size=16)
+# auto_scale_lr = dict(base_batch_size=16)
+
+# base_batch_size = (4 GPUs) x (2 samples per GPU)
+auto_scale_lr = dict(base_batch_size=8)
 
 #randomness = dict(seed=247161711, deterministic=True)
