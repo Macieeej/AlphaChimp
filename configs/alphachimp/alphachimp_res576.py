@@ -4,8 +4,8 @@ num_levels = 5
 model = dict(
     type='mmaction.AlphaChimp',
     #init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/panaf600_res576.pth'),
-    init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/pretrain_res576.pth'),
-    #init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/alphachimp_res576.pth'),
+    #init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/pretrain_res576.pth'),
+    init_cfg=dict(type='Pretrained', checkpoint='work_dirs/alphachimp/alphachimp_res576.pth'),
     model_cfg=dict(
         type='mmdet.DINO',
         num_feature_levels=num_levels,
