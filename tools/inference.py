@@ -318,6 +318,7 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -326,6 +327,7 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -450,6 +452,7 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -458,6 +461,7 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -580,6 +584,7 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -588,12 +593,13 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
             # Save processed frame to video
             video_writer.append_data(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-            
+
         # Close the video writer for the current video
         video_writer.close()
 
