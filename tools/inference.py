@@ -226,10 +226,10 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'camera interaction', 'climbing down', 'climbing up', 'hanging', 'running',
-                          'sitting', 'sitting on back', 'standing', 'walking',
-                          'grooming', 'being groomed', 'touching', 'leading', 'following',
-                          'carrying', 'being carried']
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up', 'hanging', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'walking',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -349,12 +349,16 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
 def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25, input_h=576, input_w=576):
     pos_thr = 0.25
     act_thr = 0.30
-
+    '''
     action_class_names = ['other', 'camera interaction', 'climbing down', 'climbing up', 'hanging', 'running',
                           'sitting', 'sitting on back', 'standing', 'walking',
                           'grooming', 'being groomed', 'touching', 'leading', 'following',
                           'carrying', 'being carried']
-
+    '''
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up', 'hanging', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'walking',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
     # Prepare color map for distinct colors in tracking visualization
 
     # cmap = plt.get_cmap('Set3')
@@ -484,10 +488,10 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'camera interaction', 'climbing down', 'climbing up', 'hanging', 'running',
-                          'sitting', 'sitting on back', 'standing', 'walking',
-                          'grooming', 'being groomed', 'touching', 'leading', 'following',
-                          'carrying', 'being carried']
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up', 'hanging', 'running',
+                          'sitting', 'sitting_on_back', 'standing', 'walking',
+                          'grooming', 'being_groomed', 'touch', 'leading', 'following',
+                          'chimp_carrying', 'being_carried']
 
     # Prepare color map for distinct colors in tracking visualization
 
