@@ -225,13 +225,9 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
+                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
+                          'standing']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -320,6 +316,7 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -328,6 +325,7 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -350,13 +348,9 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
+                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
+                          'standing']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -455,6 +449,7 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -463,6 +458,7 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -485,13 +481,9 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
     pos_thr = 0.25
     act_thr = 0.30
 
-    action_class_names = ['other', 'moving', 'climbing', 'resting', 'sleeping',
-                          'solitary object playing', 'eating', 'manipulating object',
-                          'grooming', 'being groomed', 'aggressing', 'embracing', 'begging',
-                          'being begged from', 'taking object',
-                          'losing object', 'carrying', 'being carried', 'nursing', 'being nursed',
-                          'playing', 'touching', 'erection',
-                          'displaying']
+    action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
+                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
+                          'standing']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -588,6 +580,7 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })
@@ -596,6 +589,7 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
                     'frame_id': frame_id,
                     'bbox': [bbox_x1, bbox_y1, bbox_x2, bbox_y2],
                     'label': label_names,
+                    'label_scores': dict(zip(action_class_names, label.tolist())),
                     'score': float(score),
                     'track_id': int(track_id)
                 })

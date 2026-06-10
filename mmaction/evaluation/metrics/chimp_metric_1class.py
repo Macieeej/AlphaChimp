@@ -123,7 +123,7 @@ def calculate_det_average_precision(processed_res, thr=0.5) -> float:
     average_precision = np.trapz(precisions, recalls)
     return average_precision
 
-def calculate_act_average_precision(processed_res, thr=0.2, num_classes=24) -> tuple:
+def calculate_act_average_precision(processed_res, thr=0.2, num_classes=10) -> tuple:
     label_pairs = []
     for res in processed_res:
         if res is not None:
