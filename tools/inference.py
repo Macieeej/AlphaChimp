@@ -113,7 +113,7 @@ def parse_args():
     parser.add_argument('--vis_mode', type=str, default='mix', help="choose between 'det', 'act' and 'mix', which means to visualize detection bbox / action / both")
     parser.add_argument('--test_mode', type=bool, default=False, help="debug")
     parser.add_argument('--no_obj_mode', type=bool, default=True)
-    args = parser.parse_args()
+    args, _ = parser.parse_known_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
     return args
