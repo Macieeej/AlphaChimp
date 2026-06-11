@@ -226,8 +226,8 @@ def draw_vis_det(model, track_instances, data_path, out_file_path='out', fps=25,
     act_thr = 0.30
 
     action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
-                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
-                          'standing']
+                          'walking', 'running', 'sitting', 'sitting_on_back', 'standing',
+                          'hanging']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -349,8 +349,8 @@ def draw_vis_act(model, track_instances, data_path, out_file_path='out', fps=25,
     act_thr = 0.30
 
     action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
-                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
-                          'standing']
+                          'walking', 'running', 'sitting', 'sitting_on_back', 'standing',
+                          'hanging']
 
     # Prepare color map for distinct colors in tracking visualization
 
@@ -482,8 +482,8 @@ def draw_vis_mix(model, track_instances, data_path, out_file_path='out', fps=25,
     act_thr = 0.30
 
     action_class_names = ['other', 'camera_interaction', 'climbing_down', 'climbing_up',
-                          'hanging', 'running', 'walking', 'sitting', 'sitting_on_back',
-                          'standing']
+                          'walking', 'running', 'sitting', 'sitting_on_back', 'standing',
+                          'hanging']
 
     # Prepare color map for distinct colors in tracking visualization
 
