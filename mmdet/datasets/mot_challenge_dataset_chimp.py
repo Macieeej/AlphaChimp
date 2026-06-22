@@ -24,7 +24,7 @@ class MOTChallengeDatasetChimp(BaseVideoDataset):
                 visibility_thr: float = -1,
                 fps: int = 25,
                 filename_tmpl: str = '{:06}.jpg',
-                num_classes: int = 24,
+                num_classes: int = 13,
                 modality: str = 'RGB',
                 *args, **kwargs):
         self.visibility_thr = visibility_thr

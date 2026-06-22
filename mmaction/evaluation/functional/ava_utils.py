@@ -289,13 +289,13 @@ def ava_eval(result_file,
     others = np.nanmean([x[2] for x in cls_AP if 22 <= x[0] < 24])
     '''
 
-    slowfast_base = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9]]) / 9
-    slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [10, 11, 12, 13, 14, 15, 16]]) / 7
+    slowfast_base = np.nansum([x[2] for x in cls_AP if x[0] in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]]) / 2
+    slowfast_base_social = np.nansum([x[2] for x in cls_AP if x[0] in [6, 7, 8, 9, 10, 11, 12]]) / 7
 
     overall = np.nanmean([x[2] for x in cls_AP])
     object_interaction = np.nanmean([x[2] for x in cls_AP if 1 <= x[0] < 2])
-    locomotion = np.nanmean([x[2] for x in cls_AP if 2 <= x[0] < 10])
-    social_interaction = np.nanmean([x[2] for x in cls_AP if 10 <= x[0] < 17])
+    locomotion = np.nanmean([x[2] for x in cls_AP if 2 <= x[0] < 6])
+    social_interaction = np.nanmean([x[2] for x in cls_AP if 6 <= x[0] < 13])
     #others = np.nanmean([x[2] for x in cls_AP if 8 <= x[0] < 10])
 
     print('Overall Results: ', flush=True)
